@@ -11,7 +11,7 @@ func _physics_process(delta):
 		position += velocity * pickup_speed * delta
 		if pickup_speed < 110:
 			pickup_speed += pickup_acceleration * delta	
-		if position.distance_to(target.position) < 1:
+		if position.distance_to(target.position) < 3:
 			# Placeholder to show that it works, when we work out what the pickups are, add effects here
 			print("Pickup acquired")
 			queue_free()

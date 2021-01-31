@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (PackedScene) var Bullet
+export (PackedScene) var Bullet = load("res://Objects/Bullet.tscn")
 export var speed = 150
 export var shoot_delay = 0.5
 var shoot_timer = shoot_delay
@@ -16,7 +16,7 @@ func _ready():
 
 func shoot():
 	var b = Bullet.instance()
-	owner.add_child(b)
+	get_parent().add_child(b)
 	b.transform = $BulletSpawner.global_transform
 
 func get_input():

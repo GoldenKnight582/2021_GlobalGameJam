@@ -1,17 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Objects/Bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Initialize Scene.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Pickup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/PlayerSpawner.tscn" type="PackedScene" id=4]
 
 [node name="Root" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 471.233, 288.959 )
-Bullet = ExtResource( 2 )
+script = ExtResource( 1 )
+Player = ExtResource( 2 )
 
 [node name="Pickup" parent="." instance=ExtResource( 3 )]
 position = Vector2( 235.717, 150.41 )
 
 [node name="Pickup2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 185.206, 222.247 )
+
+[node name="PlayerSpawner" parent="." instance=ExtResource( 4 )]
+position = Vector2( 517.455, 286.228 )
