@@ -45,3 +45,8 @@ func _process(delta):
 	damage_timer -= delta
 	if health <= 0:
 		queue_free()
+
+func _on_PickupRadius_area_entered(area):
+	if area.is_in_group("pickups"):
+		area.get_target(self)
+		print(area.position.distance_to(position))
