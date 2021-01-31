@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Melee Grunt.tscn" type="PackedScene" id=3]
+
+[node name="Root" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 471.233, 288.959 )
+Bullet = ExtResource( 2 )
+
+[node name="Melee Grunt" parent="." instance=ExtResource( 3 )]
+position = Vector2( 794.597, 132.433 )
