@@ -18,14 +18,6 @@ func shoot():
 	var b = Bullet.instance()
 	owner.add_child(b)
 	b.transform = $BulletSpawner.global_transform
-	
-func mob_collision_check():
-	for i in get_slide_count():
-		var collision = get_slide_collision(i)
-		if collision.collider.name == "Melee Grunt" and damage_timer <= 0:
-			health -= 1
-			damage_timer = damage_delay
-	
 
 func get_input():
 	look_at(get_global_mouse_position())
@@ -47,8 +39,6 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity, Vector2.UP)
-	mob_collision_check()
-
 		
 func _process(delta):
 	shoot_timer -= delta
